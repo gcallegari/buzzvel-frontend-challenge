@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroVisual from "@/components/ui/HeroVisual";
 
 export default function Hero() {
   return (
@@ -63,17 +64,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Hero image */}
-        <div className="order-1 flex justify-center md:order-2">
-          <Image
-            src="/images/hero-desktop.png"
-            alt="Student smiling while learning on a laptop"
-            width={626}
-            height={524}
-            priority
-            sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 626px"
-            className="h-auto w-full max-w-[626px]"
-          />
+        {/* Hero visual */}
+        <div className="order-1 min-w-0 md:order-2">
+          <HeroVisual />
         </div>
       </div>
     </section>
