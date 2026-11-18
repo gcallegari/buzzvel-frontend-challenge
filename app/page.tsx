@@ -8,6 +8,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import People from "@/components/sections/People";
 import Contact from "@/components/sections/Contact";
 import FinalCTA from "@/components/sections/FinalCTA";
+import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <People />
         <Contact />
         <FinalCTA />
+        <Footer />
       </main>
     </>
   );
