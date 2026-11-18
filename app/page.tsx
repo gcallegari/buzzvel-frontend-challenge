@@ -7,6 +7,7 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import Testimonials from "@/components/sections/Testimonials";
 import People from "@/components/sections/People";
 import Contact from "@/components/sections/Contact";
+import FinalCTA from "@/components/sections/FinalCTA";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Testimonials />
         <People />
         <Contact />
+        <FinalCTA />
       </main>
     </>
   );
