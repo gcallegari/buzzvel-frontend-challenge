@@ -1,0 +1,173 @@
+{
+  "Header": {
+    "home": "Luma home",
+    "mainNavigation": "Main navigation",
+    "mobileNavigation": "Mobile navigation",
+    "courses": "Courses",
+    "teams": "For Teams",
+    "community": "Community",
+    "about": "About",
+    "login": "Log in",
+    "startLearning": "Start learning",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "Hero": {
+    "eyebrow": "Learn at your own pace",
+    "title": "Build skills that actually move you forward.",
+    "description": "Practical courses taught by people who do the work every day. Learn design, technology, business and more — one focused lesson at a time.",
+    "explore": "Explore courses",
+    "howItWorks": "See how it works",
+    "socialProof": "Trusted by <strong>24,000+</strong> learners",
+    "imageAlt": "Student smiling while working on a laptop",
+    "coursesBadge": "expert-led courses",
+    "ratingBadge": "{rating} avg rating"
+  },
+  "Categories": {
+    "eyebrow": "Find your next skill",
+    "title": "Learn something worth knowing.",
+    "description": "Short, practical courses designed around skills you can put to work immediately.",
+    "explore": "Explore",
+    "exploreAriaLabel": "Explore {category} courses",
+    "items": {
+      "productDesign": {
+        "title": "Product Design",
+        "description": "Turn complex problems into clear, useful experiences."
+      },
+      "technology": {
+        "title": "Technology",
+        "description": "Build a stronger understanding of the tools shaping digital products."
+      },
+      "business": {
+        "title": "Business",
+        "description": "Develop practical skills for better decisions and stronger results."
+      },
+      "creative": {
+        "title": "Creative",
+        "description": "Explore new ways to communicate, create and tell stories."
+      }
+    }
+  },
+  "FeaturedCourse": {
+    "badge": "Featured course",
+    "category": "Most popular this month",
+    "title": "Designing products people understand.",
+    "description": "Learn how to turn complex problems into simple, intentional product experiences through research, structure and thoughtful interaction design.",
+    "instructor": "with <strong>{name}</strong> · {role}",
+    "instructorRole": "Senior Product Designer",
+    "tags": {
+      "productDesign": "Product Design",
+      "beginner": "Beginner",
+      "liveFeedback": "Live feedback"
+    },
+    "viewCourse": "View course",
+    "browseCourses": "Browse all courses",
+    "imageAlt": "Product designer working with sketches, materials and prototypes"
+  },
+    "HowItWorks": {
+    "eyebrow": "How Luma works",
+    "title": "Less browsing. More learning.",
+    "step": "Step {number}",
+    "items": {
+      "chooseFocus": {
+        "title": "Choose your focus",
+        "description": "Find courses based on the skill you want to build, not endless content categories."
+      },
+      "learnExperience": {
+        "title": "Learn from experience",
+        "description": "Follow concise lessons created by professionals who use these skills."
+      },
+      "putIntoPractice": {
+        "title": "Put it into practice",
+        "description": "Every course includes practical exercises designed to turn knowledge into action."
+      }
+    }
+  },
+  "Testimonials": {
+    "ariaLabel": "Student testimonials and learning statistics",
+    "quote": "The lessons are short enough to fit into my week, but detailed enough that I actually leave with something I can use.",
+    "authorRole": "Product Manager",
+    "stats": {
+      "learners": "active learners",
+      "courses": "expert-led courses",
+      "completion": "complete their first course"
+    }
+  },
+  "People": {
+    "eyebrow": "The people",
+    "title": "Meet international students & teachers",
+    "description": "Morbi sit egestas dignissim pharetra, sed amet. Tempus justo senectus risus ac vel, velit, nunc. Eget commodo eget in aliquam facilisi facilisi nec magna hendrerit. Placerat ipsum sit tellus urna, faucibus aenean lorem faucibus integer.",
+    "explore": "Explore teachers and students",
+    "imageAlt": "Collage of international students and teachers studying, collaborating and celebrating achievements"
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "description": "Have a question? We’re here to help. Whether you’re looking for the right course, learning with your team or interested in teaching with Luma, we’d love to hear from you.",
+    "info": {
+      "email": "Email",
+      "responseTime": "Response Time",
+      "responseDescription": "Up to 24 hours on business days"
+    },
+    "form": {
+      "title": "Contact us",
+      "description": "Fill out the fields and we will get in touch.",
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "youremail@example.com",
+      "question": "Your question",
+      "questionPlaceholder": "Tell us how we can help...",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "unavailable": "Message sending is not available yet. Please contact us by email.",
+      "validation": {
+        "name": "Please enter your full name.",
+        "email": "Please enter a valid email address.",
+        "question": "Please enter at least 10 characters."
+      }
+    }
+  },
+   "FinalCTA": {
+    "title": "What will you learn next?",
+    "description": "Start with one course. Build from there.",
+    "exploreCourses": "Explore all courses",
+    "joinLuma": "Join Luma",
+    "learnerAvatars": "{count, plural, one {# learner avatar} other {# learner avatars}}"
+  },
+  "Footer": {
+    "home": "Luma home",
+    "description": "Practical learning for curious people.",
+    "navigationLabel": "{group} links",
+    "copyright": "© {year} Luma Learning",
+    "groups": {
+      "explore": {
+        "title": "Explore",
+        "links": {
+          "courses": "Courses",
+          "categories": "Categories",
+          "instructors": "Instructors",
+          "teams": "For Teams"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": "About",
+          "careers": "Careers",
+          "journal": "Journal"
+        }
+      },
+      "support": {
+        "title": "Support",
+        "links": {
+          "helpCenter": "Help Center",
+          "contact": "Contact",
+          "terms": "Terms",
+          "privacy": "Privacy"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
-
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import AvatarGroup from "@/components/ui/AvatarGroup";
 
 const decorations = [
@@ -36,6 +36,8 @@ const decorations = [
 ];
 
 export default function FinalCTA() {
+  const t = useTranslations("FinalCTA");
+
   return (
     <section
       id="final-cta"
@@ -91,12 +93,12 @@ export default function FinalCTA() {
           id="final-cta-title"
           className="mt-8 max-w-[1000px] text-[36px] font-bold leading-[1.1] tracking-tight text-foreground md:mt-10 md:text-[56px]"
         >
-          What will you learn next?
+          {t("title")}
         </h2>
 
         {/* Description */}
         <p className="mt-4 text-base leading-relaxed text-foreground/60 md:text-lg">
-          Start with one course. Build from there.
+          {t("description")}
         </p>
 
         {/* Call to action buttons */}
@@ -105,14 +107,14 @@ export default function FinalCTA() {
             href="#courses"
             className="inline-flex min-h-[52px] w-full items-center justify-center rounded-md bg-primary px-7 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:w-auto"
           >
-            Explore all courses
+            {t("exploreCourses")}
           </a>
 
           <a
             href="#contact"
             className="inline-flex min-h-[52px] w-full items-center justify-center rounded-md border border-border bg-white px-7 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:w-auto"
           >
-            Join Luma
+            {t("joinLuma")}
           </a>
         </div>
       </div>

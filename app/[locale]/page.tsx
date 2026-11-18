@@ -1,4 +1,3 @@
-
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import Categories from "@/components/sections/Categories";
@@ -8,7 +7,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import People from "@/components/sections/People";
 import Contact from "@/components/sections/Contact";
 import FinalCTA from "@/components/sections/FinalCTA";
-import Footer from "@/components/sections/Footer";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -24,8 +23,9 @@ export default function Home() {
         <People />
         <Contact />
         <FinalCTA />
-        <Footer />
       </main>
+
+      <Footer />
     </>
   );
 }

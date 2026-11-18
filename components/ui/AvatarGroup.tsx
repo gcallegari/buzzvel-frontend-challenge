@@ -1,5 +1,5 @@
-
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface AvatarGroupProps {
   count?: number;
@@ -12,10 +12,12 @@ export default function AvatarGroup({
   size = 40,
   className = "",
 }: AvatarGroupProps) {
+  const t = useTranslations("FinalCTA");
+
   return (
     <div
       className={`flex items-center justify-center -space-x-2 ${className}`}
-      aria-label={`${count} learner avatars`}
+      aria-label={t("learnerAvatars", { count })}
       role="img"
     >
       {Array.from({ length: count }, (_, index) => (

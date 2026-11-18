@@ -1,8 +1,10 @@
-
+import { useTranslations } from "next-intl";
 import StepCard from "@/components/ui/StepCard";
 import { steps } from "@/data/steps";
 
 export default function HowItWorks() {
+  const t = useTranslations("HowItWorks");
+
   return (
     <section
       id="how-it-works"
@@ -13,14 +15,14 @@ export default function HowItWorks() {
         {/* Section heading */}
         <div className="text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-primary">
-            How Luma works
+            {t("eyebrow")}
           </p>
 
           <h2
             id="how-it-works-title"
             className="text-[30px] font-bold leading-[1.1] tracking-tight md:text-[42px]"
           >
-            Less browsing. More learning.
+            {t("title")}
           </h2>
         </div>
 

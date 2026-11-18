@@ -1,24 +1,19 @@
-
-export interface Stat {
-  id: string;
-  value: string;
-  label: string;
-}
-
-export const stats: Stat[] = [
+export const stats = [
   {
     id: "learners",
     value: "24K+",
-    label: "active learners",
+    translationKey: "learners",
   },
   {
     id: "courses",
     value: "120+",
-    label: "expert-led courses",
+    translationKey: "courses",
   },
   {
     id: "completion",
     value: "92%",
-    label: "complete their first course",
+    translationKey: "completion",
   },
-];
+] as const;
+
+export type Stat = (typeof stats)[number];

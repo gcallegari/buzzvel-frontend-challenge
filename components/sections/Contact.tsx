@@ -1,8 +1,10 @@
-
+import { useTranslations } from "next-intl";
 import ContactForm from "@/components/ui/ContactForm";
 import ContactInfo from "@/components/ui/ContactInfo";
 
 export default function Contact() {
+  const t = useTranslations("Contact");
+
   return (
     <section
       id="contact"
@@ -13,21 +15,18 @@ export default function Contact() {
         {/* Contact information */}
         <div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-primary">
-            Contact
+            {t("eyebrow")}
           </p>
 
           <h2
             id="contact-title"
             className="text-[30px] font-bold leading-[1.1] tracking-tight md:text-[42px]"
           >
-            Get in touch
+            {t("title")}
           </h2>
 
           <p className="mt-5 max-w-md text-sm leading-relaxed text-foreground/65 md:text-base">
-            Have a question? We’re here to help. Whether you’re
-            looking for the right course, learning with your team
-            or interested in teaching with Luma, we’d love to
-            hear from you.
+            {t("description")}
           </p>
 
           <ContactInfo />

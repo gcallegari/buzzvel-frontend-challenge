@@ -1,27 +1,32 @@
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import HeroVisual from "@/components/ui/HeroVisual";
 
 export default function Hero() {
+  const t = useTranslations("Hero");
+
   return (
     <section id="home" aria-labelledby="hero-title" className="bg-background">
-      <div className="mx-auto grid max-w-7xl items-center gap-6 px-6 py-10 md:grid-cols-2 md:gap-12 md:py-20 lg:px-10">
+      <div className="mx-auto grid max-w-7xl items-center gap-6 px-6 py-10 md:grid-cols-2 md:gap-15 md:py-20 lg:px-10">
         {/* Hero content */}
         <div className="order-2 md:order-1">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-primary">
-            Learn at your own pace
+          {/* Eyebrow */}
+          <p className="mb-4 font-sans text-xs font-semibold leading-4 tracking-[1.44px] uppercase text-(--primary-blue)">
+            {t("eyebrow")}
           </p>
 
+          {/* Heading */}
           <h1
             id="hero-title"
-            className="max-w-xl text-[32px] font-bold leading-[1.1] tracking-tight sm:text-4xl lg:text-[52px]"
+            className="max-w-xl font-heading text-[32px] font-extrabold leading-[1.09375] tracking-[-1.6px] text-(--text-primary) sm:text-[40px] lg:text-[64px]"
           >
-            Build skills that actually move you forward.
+            {t("title")}
           </h1>
 
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-foreground/65 md:text-base">
-            Practical courses taught by people who do the work every day. Learn
-            design, technology, business and more — one focused lesson at a
-            time.
+          {/* Description */}
+          <p className="mt-6 max-w-md font-sans text-base font-normal leading-7 tracking-normal text-(--text-secondary) lg:text-lg">
+            {t("description")}
           </p>
 
           {/* Call to action */}
@@ -30,14 +35,14 @@ export default function Hero() {
               href="#courses"
               className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-auto"
             >
-              Explore courses
+              {t("explore")}
             </a>
 
             <a
               href="#how-it-works"
               className="inline-flex min-h-12 w-full items-center justify-center rounded-md border border-border bg-white px-6 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-auto"
             >
-              See how it works
+              {t("howItWorks")}
             </a>
           </div>
 
@@ -57,9 +62,13 @@ export default function Hero() {
             </div>
 
             <p className="text-xs text-foreground/70">
-              Trusted by{" "}
-              <strong className="font-bold text-foreground">24,000+</strong>{" "}
-              learners
+              {t.rich("socialProof", {
+                strong: (chunks) => (
+                  <strong className="font-bold text-foreground">
+                    {chunks}
+                  </strong>
+                ),
+              })}
             </p>
           </div>
         </div>

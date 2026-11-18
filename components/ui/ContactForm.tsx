@@ -1,32 +1,44 @@
-
 "use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslations } from "next-intl";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-const contactSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your full name."),
-  email: z.email("Please enter a valid email address."),
-  question: z
-    .string()
-    .trim()
-    .min(10, "Please enter at least 10 characters."),
-});
+const createContactSchema = (
+  t: ReturnType<typeof useTranslations<"Contact.form">>,
+) =>
+  z.object({
+    name: z
+      .string()
+      .trim()
+      .min(2, t("validation.name")),
 
-type ContactFormValues = z.infer<typeof contactSchema>;
+    email: z.email(t("validation.email")),
+
+    question: z
+      .string()
+      .trim()
+      .min(10, t("validation.question")),
+  });
+
+type ContactFormValues = {
+  name: string;
+  email: string;
+  question: string;
+};
 
 export default function ContactForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const t = useTranslations("Contact.form");
+  const [isUnavailable, setIsUnavailable] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset,
   } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(createContactSchema(t)),
     mode: "onBlur",
     defaultValues: {
       name: "",
@@ -35,13 +47,10 @@ export default function ContactForm() {
     },
   });
 
-  const onSubmit = async (data: ContactFormValues) => {
+  const onSubmit = (_data: ContactFormValues) => {
     // TODO: Integrate with a real API endpoint.
-    // Do not log or transmit personal data until an endpoint exists.
-    void data;
-
-    setIsSubmitted(false);
-    reset();
+    // Do not transmit or log personal data until an endpoint exists.
+    setIsUnavailable(true);
   };
 
   const inputStyles =
@@ -50,20 +59,16 @@ export default function ContactForm() {
   return (
     <div className="rounded-xl border border-border bg-white p-5 shadow-sm md:p-8">
       <h3 className="text-lg font-bold text-foreground">
-        Contact us
+        {t("title")}
       </h3>
 
       <p className="mt-2 text-xs text-foreground/60">
-        <span className="hidden md:inline">
-          Fill out the fields and we will get in touch.
-        </span>
-        <span className="md:hidden">
-          Preencha os campos e entraremos em contato.
-        </span>
+        {t("description")}
       </p>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
+        onChange={() => setIsUnavailable(false)}
         noValidate
         className="mt-6 flex flex-col gap-5"
       >
@@ -73,15 +78,14 @@ export default function ContactForm() {
             htmlFor="contact-name"
             className="text-xs font-semibold"
           >
-            <span className="hidden md:inline">Full name</span>
-            <span className="md:hidden">Nome completo</span>
+            {t("name")}
           </label>
 
           <input
             id="contact-name"
             type="text"
             autoComplete="name"
-            placeholder="Your name"
+            placeholder={t("namePlaceholder")}
             aria-invalid={!!errors.name}
             aria-describedby={
               errors.name ? "contact-name-error" : undefined
@@ -107,15 +111,14 @@ export default function ContactForm() {
             htmlFor="contact-email"
             className="text-xs font-semibold"
           >
-            <span className="hidden md:inline">Email</span>
-            <span className="md:hidden">E-mail</span>
+            {t("email")}
           </label>
 
           <input
             id="contact-email"
             type="email"
             autoComplete="email"
-            placeholder="youremail@example.com"
+            placeholder={t("emailPlaceholder")}
             aria-invalid={!!errors.email}
             aria-describedby={
               errors.email ? "contact-email-error" : undefined
@@ -141,16 +144,13 @@ export default function ContactForm() {
             htmlFor="contact-question"
             className="text-xs font-semibold"
           >
-            <span className="hidden md:inline">
-              Your question
-            </span>
-            <span className="md:hidden">Sua dúvida</span>
+            {t("question")}
           </label>
 
           <textarea
             id="contact-question"
             rows={4}
-            placeholder="Tell us how we can help..."
+            placeholder={t("questionPlaceholder")}
             aria-invalid={!!errors.question}
             aria-describedby={
               errors.question
@@ -178,17 +178,12 @@ export default function ContactForm() {
           disabled={isSubmitting}
           className="flex min-h-11 w-full items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-60"
         >
-          <span className="hidden md:inline">
-            Send message
-          </span>
-          <span className="md:hidden">
-            Enviar mensagem
-          </span>
+          {isSubmitting ? t("submitting") : t("submit")}
         </button>
 
-        {isSubmitted && (
-          <p role="status" className="text-sm text-primary">
-            Message submitted.
+        {isUnavailable && (
+          <p role="status" className="text-sm text-foreground/70">
+            {t("unavailable")}
           </p>
         )}
       </form>

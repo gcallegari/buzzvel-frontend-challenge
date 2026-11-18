@@ -1,39 +1,77 @@
-
-export interface FooterLink {
-  label: string;
-  href: string;
-}
-
-export interface FooterGroup {
-  title: string;
-  links: FooterLink[];
-}
-
-export const footerGroups: FooterGroup[] = [
+export const footerGroups = [
   {
-    title: "Explore",
+    id: "explore",
+    titleKey: "explore",
     links: [
-      { label: "Courses", href: "#courses" },
-      { label: "Categories", href: "#courses" },
-      { label: "Instructors", href: "#community" },
-      { label: "For Teams", href: "#teams" },
+      {
+        id: "courses",
+        labelKey: "courses",
+        href: "#courses",
+      },
+      {
+        id: "categories",
+        labelKey: "categories",
+        href: "#courses",
+      },
+      {
+        id: "instructors",
+        labelKey: "instructors",
+        href: "#community",
+      },
+      {
+        id: "teams",
+        labelKey: "teams",
+        href: "#contact",
+      },
     ],
   },
   {
-    title: "Company",
+    id: "company",
+    titleKey: "company",
     links: [
-      { label: "About", href: "#about" },
-      { label: "Careers", href: "#contact" },
-      { label: "Journal", href: "#community" },
+      {
+        id: "about",
+        labelKey: "about",
+        href: "#contact",
+      },
+      {
+        id: "careers",
+        labelKey: "careers",
+        href: "#contact",
+      },
+      {
+        id: "journal",
+        labelKey: "journal",
+        href: "#community",
+      },
     ],
   },
   {
-    title: "Support",
+    id: "support",
+    titleKey: "support",
     links: [
-      { label: "Help Center", href: "#contact" },
-      { label: "Contact", href: "#contact" },
-      { label: "Terms", href: "#contact" },
-      { label: "Privacy", href: "#contact" },
+      {
+        id: "helpCenter",
+        labelKey: "helpCenter",
+        href: "#contact",
+      },
+      {
+        id: "contact",
+        labelKey: "contact",
+        href: "#contact",
+      },
+      {
+        id: "terms",
+        labelKey: "terms",
+        href: "#contact",
+      },
+      {
+        id: "privacy",
+        labelKey: "privacy",
+        href: "#contact",
+      },
     ],
   },
-];
+] as const;
+
+export type FooterGroup = (typeof footerGroups)[number];

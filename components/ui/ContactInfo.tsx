@@ -1,4 +1,4 @@
-
+import { useTranslations } from "next-intl";
 import { Clock3, MessageCircleMore } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -33,11 +33,13 @@ function ContactInfoItem({
 }
 
 export default function ContactInfo() {
+  const t = useTranslations("Contact.info");
+
   return (
     <div className="mt-8 flex flex-col gap-3">
       <ContactInfoItem
         icon={<MessageCircleMore size={18} strokeWidth={1.8} />}
-        title="Email"
+        title={t("email")}
       >
         <a
           href="mailto:contact@luma.com"
@@ -49,9 +51,9 @@ export default function ContactInfo() {
 
       <ContactInfoItem
         icon={<Clock3 size={18} strokeWidth={1.8} />}
-        title="Response Time"
+        title={t("responseTime")}
       >
-        Up to 24 hours on business days
+        {t("responseDescription")}
       </ContactInfoItem>
     </div>
   );

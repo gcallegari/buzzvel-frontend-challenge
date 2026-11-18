@@ -9,11 +9,16 @@
   --color-primary-hover: #2445df;
   --color-accent: #ffdf59;
 
+  --primary-blue: #3157F6;
+
   --color-surface: #ffffff;
   --color-muted: #f5f4ef;
   --color-border: #e6e8ef;
 
-  --font-sans: var(--font-dm-sans);
+  --text-primary: #171B2C;
+  --text-secondary: #656770;
+
+  --font-sans: var(--font-inter);
 }
 
 
@@ -27,7 +32,8 @@
   --color-muted: #f5f4ef;
   --color-border: #e6e8ef;
 
-  --font-sans: var(--font-dm-sans);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-plus-jakarta);
 }
 
 
@@ -43,7 +49,7 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-sans), Arial, sans-serif;
+  font-family: var(--font-inter), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 

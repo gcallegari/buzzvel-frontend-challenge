@@ -1,7 +1,9 @@
-
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function People() {
+  const t = useTranslations("People");
+
   return (
     <section
       id="community"
@@ -12,29 +14,25 @@ export default function People() {
         {/* Section content */}
         <div className="order-1">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-primary">
-            The people
+            {t("eyebrow")}
           </p>
 
           <h2
             id="people-title"
             className="max-w-lg text-[30px] font-bold leading-[1.1] tracking-tight md:text-[42px]"
           >
-            Meet international students &amp; teachers
+            {t("title")}
           </h2>
 
           <p className="mt-6 max-w-lg text-sm leading-relaxed text-foreground/65 md:text-base">
-            Morbi sit egestas dignissim pharetra, sed amet.
-            Tempus justo senectus risus ac vel, velit, nunc.
-            Eget commodo eget in aliquam facilisi facilisi
-            nec magna hendrerit. Placerat ipsum sit tellus
-            urna, faucibus aenean lorem faucibus integer.
+            {t("description")}
           </p>
 
           <a
             href="#contact"
             className="mt-7 inline-flex min-h-12 items-center justify-center rounded-md border border-border bg-white px-6 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            Explore teachers and students
+            {t("explore")}
           </a>
         </div>
 
@@ -42,7 +40,7 @@ export default function People() {
         <div className="order-2 flex min-w-0 items-center justify-center">
           <Image
             src="/images/the-people.png"
-            alt="Collage of international students and teachers studying, collaborating and celebrating achievements"
+            alt={t("imageAlt")}
             width={530}
             height={530}
             sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1279px) 45vw, 530px"

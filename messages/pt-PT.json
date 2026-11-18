@@ -1,0 +1,173 @@
+{
+  "Header": {
+    "home": "Página inicial da Luma",
+    "mainNavigation": "Navegação principal",
+    "mobileNavigation": "Navegação móvel",
+    "courses": "Cursos",
+    "teams": "Para Empresas",
+    "community": "Comunidade",
+    "about": "Sobre Nós",
+    "login": "Iniciar sessão",
+    "startLearning": "Começar a aprender",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "language": "Idioma"
+  },
+  "Hero": {
+    "eyebrow": "Aprenda ao seu ritmo",
+    "title": "Desenvolva competências que fazem a diferença.",
+    "description": "Cursos práticos lecionados por profissionais que trabalham diariamente nas suas áreas. Aprenda design, tecnologia, negócios e muito mais — uma aula de cada vez.",
+    "explore": "Explorar cursos",
+    "howItWorks": "Saiba como funciona",
+    "socialProof": "A confiança de <strong>24,000+</strong> alunos",
+    "imageAlt": "Estudante a sorrir enquanto trabalha num computador portátil",
+    "coursesBadge": "cursos especializados",
+    "ratingBadge": "média de {rating}"
+  },
+  "Categories": {
+    "eyebrow": "Descubra a sua próxima competência",
+    "title": "Aprenda algo que vale a pena.",
+    "description": "Cursos curtos e práticos, concebidos para desenvolver competências que pode aplicar de imediato.",
+    "explore": "Explorar",
+    "exploreAriaLabel": "Explorar cursos de {category}",
+    "items": {
+      "productDesign": {
+        "title": "Design de Produto",
+        "description": "Transforme problemas complexos em experiências claras e úteis."
+      },
+      "technology": {
+        "title": "Tecnologia",
+        "description": "Aprofunde os seus conhecimentos sobre as ferramentas que moldam os produtos digitais."
+      },
+      "business": {
+        "title": "Negócios",
+        "description": "Desenvolva competências práticas para tomar melhores decisões e alcançar melhores resultados."
+      },
+      "creative": {
+        "title": "Criatividade",
+        "description": "Explore novas formas de comunicar, criar e contar histórias."
+      }
+    }
+  },
+   "FeaturedCourse": {
+    "badge": "Curso em destaque",
+    "category": "O mais popular deste mês",
+    "title": "Criar produtos que as pessoas compreendem.",
+    "description": "Aprenda a transformar problemas complexos em experiências de produto simples e intuitivas, através da investigação, estruturação e de um design de interação cuidado.",
+    "instructor": "com <strong>{name}</strong> · {role}",
+    "instructorRole": "Designer Sénior de Produto",
+    "tags": {
+      "productDesign": "Design de Produto",
+      "beginner": "Iniciação",
+      "liveFeedback": "Feedback em direto"
+    },
+    "viewCourse": "Ver curso",
+    "browseCourses": "Explorar todos os cursos",
+    "imageAlt": "Designer de produto a trabalhar com esboços, materiais e protótipos"
+  },
+   "HowItWorks": {
+    "eyebrow": "Como funciona a Luma",
+    "title": "Menos pesquisas. Mais aprendizagem.",
+    "step": "Passo {number}",
+    "items": {
+      "chooseFocus": {
+        "title": "Escolha o seu objetivo",
+        "description": "Encontre cursos com base nas competências que pretende desenvolver, sem perder tempo entre inúmeras categorias."
+      },
+      "learnExperience": {
+        "title": "Aprenda com a experiência",
+        "description": "Acompanhe aulas concisas criadas por profissionais que aplicam estas competências no dia a dia."
+      },
+      "putIntoPractice": {
+        "title": "Ponha em prática",
+        "description": "Todos os cursos incluem exercícios práticos concebidos para transformar conhecimentos em ação."
+      }
+    }
+  },
+  "Testimonials": {
+    "ariaLabel": "Testemunhos de alunos e estatísticas de aprendizagem",
+    "quote": "As aulas são suficientemente curtas para se encaixarem na minha semana, mas detalhadas o bastante para que aprenda sempre algo que posso aplicar.",
+    "authorRole": "Gestor de Produto",
+    "stats": {
+      "learners": "alunos ativos",
+      "courses": "cursos de especialistas",
+      "completion": "concluem o primeiro curso"
+    }
+  },
+   "People": {
+    "eyebrow": "As pessoas",
+    "title": "Conheça alunos e professores de todo o mundo",
+    "description": "Morbi sit egestas dignissim pharetra, sed amet. Tempus justo senectus risus ac vel, velit, nunc. Eget commodo eget in aliquam facilisi facilisi nec magna hendrerit. Placerat ipsum sit tellus urna, faucibus aenean lorem faucibus integer.",
+    "explore": "Conhecer professores e alunos",
+    "imageAlt": "Colagem de alunos e professores internacionais a estudar, colaborar e celebrar conquistas"
+  },
+  "Contact": {
+    "eyebrow": "Contacto",
+    "title": "Entre em contacto",
+    "description": "Tem alguma questão? Estamos aqui para ajudar. Quer esteja à procura do curso ideal, a aprender com a sua equipa ou interessado em ensinar na Luma, teremos todo o gosto em ouvi-lo.",
+    "info": {
+      "email": "E-mail",
+      "responseTime": "Tempo de resposta",
+      "responseDescription": "Até 24 horas em dias úteis"
+    },
+    "form": {
+      "title": "Contacte-nos",
+      "description": "Preencha os campos e entraremos em contacto consigo.",
+      "name": "Nome completo",
+      "namePlaceholder": "O seu nome",
+      "email": "E-mail",
+      "emailPlaceholder": "oseuemail@exemplo.com",
+      "question": "A sua questão",
+      "questionPlaceholder": "Diga-nos como podemos ajudar...",
+      "submit": "Enviar mensagem",
+      "submitting": "A enviar...",
+      "unavailable": "O envio de mensagens ainda não está disponível. Contacte-nos por e-mail.",
+      "validation": {
+        "name": "Introduza o seu nome completo.",
+        "email": "Introduza um endereço de e-mail válido.",
+        "question": "Introduza pelo menos 10 caracteres."
+      }
+    }
+  },
+    "FinalCTA": {
+    "title": "O que vai aprender a seguir?",
+    "description": "Comece com um curso. Continue a evoluir.",
+    "exploreCourses": "Explorar todos os cursos",
+    "joinLuma": "Junte-se à Luma",
+    "learnerAvatars": "{count, plural, one {# avatar de aluno} other {# avatares de alunos}}"
+  },
+  "Footer": {
+    "home": "Página inicial da Luma",
+    "description": "Aprendizagem prática para pessoas curiosas.",
+    "navigationLabel": "Ligações de {group}",
+    "copyright": "© {year} Luma Learning",
+    "groups": {
+      "explore": {
+        "title": "Explorar",
+        "links": {
+          "courses": "Cursos",
+          "categories": "Categorias",
+          "instructors": "Formadores",
+          "teams": "Para Equipas"
+        }
+      },
+      "company": {
+        "title": "Empresa",
+        "links": {
+          "about": "Sobre nós",
+          "careers": "Carreiras",
+          "journal": "Blogue"
+        }
+      },
+      "support": {
+        "title": "Apoio",
+        "links": {
+          "helpCenter": "Centro de Ajuda",
+          "contact": "Contacto",
+          "terms": "Termos e Condições",
+          "privacy": "Privacidade"
+        }
+      }
+    }
+  }
+}

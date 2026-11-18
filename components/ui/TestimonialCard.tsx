@@ -1,7 +1,9 @@
-
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function TestimonialCard() {
+  const t = useTranslations("Testimonials");
+
   return (
     <figure className="m-0">
       {/* Decorative quotation mark */}
@@ -21,8 +23,7 @@ export default function TestimonialCard() {
 
       {/* Testimonial */}
       <blockquote className="max-w-[500px] text-[17px] font-semibold leading-[1.5] tracking-tight text-foreground md:text-[24px] md:leading-[1.4]">
-        The lessons are short enough to fit into my week, but detailed
-        enough that I actually leave with something I can use.
+        {t("quote")}
       </blockquote>
 
       {/* Author */}
@@ -41,7 +42,7 @@ export default function TestimonialCard() {
           </p>
 
           <p className="mt-1 text-xs text-foreground/60">
-            Product Manager
+            {t("authorRole")}
           </p>
         </div>
       </figcaption>

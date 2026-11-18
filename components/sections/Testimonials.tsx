@@ -1,13 +1,15 @@
-
+import { useTranslations } from "next-intl";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import StatItem from "@/components/ui/StatItem";
 import { stats } from "@/data/stats";
 
 export default function Testimonials() {
+  const t = useTranslations("Testimonials");
+
   return (
     <section
       id="testimonials"
-      aria-label="Student testimonials and learning statistics"
+      aria-label={t("ariaLabel")}
       className="bg-white py-16 md:py-24"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-[1.5fr_1fr] md:items-center md:gap-16 lg:px-10">

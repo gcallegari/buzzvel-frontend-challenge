@@ -1,8 +1,10 @@
-
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import InfoBadge from "@/components/ui/InfoBadge";
 
 export default function HeroVisual() {
+  const t = useTranslations("Hero");
+
   return (
     <div className="relative mx-auto w-full max-w-[540px]">
       <div className="relative aspect-[540/524] w-full">
@@ -22,7 +24,7 @@ export default function HeroVisual() {
         <div className="absolute left-0 top-0 z-10 h-[95.42%] w-[92.59%] overflow-hidden rounded-[24px]">
           <Image
             src="/images/hero.png"
-            alt="Student smiling while working on a laptop"
+            alt={t("imageAlt")}
             fill
             priority
             sizes="(max-width: 767px) 90vw, (max-width: 1279px) 45vw, 500px"
@@ -33,7 +35,7 @@ export default function HeroVisual() {
         {/* Course count */}
         <InfoBadge
           variant="courses"
-          className="absolute left-[-4.07%] top-[3.05%] z-20"
+          className="absolute -left-5.5 top-4 z-20"
         />
 
         {/* Rating */}

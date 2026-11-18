@@ -1,15 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
 const navigation = [
-  { label: "Courses", href: "#courses" },
-  { label: "For Teams", href: "#teams" },
-  { label: "Community", href: "#community" },
-  { label: "About", href: "#about" },
-];
+  { key: "courses", href: "#courses" },
+  { key: "teams", href: "#contact" },
+  { key: "community", href: "#community" },
+  { key: "about", href: "#contact" },
+] as const;
 
 export default function Header() {
+  const t = useTranslations("Header");
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileNavRef = useRef<HTMLElement>(null);
@@ -53,49 +57,49 @@ export default function Header() {
   const focusStyles =
     "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
 
+  const navigationStyles = `text-sm font-normal leading-6 tracking-normal text-[var(--text-secondary)] ${focusStyles}`;
+
   return (
     <header className="relative z-50 border-b border-border bg-background">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-10">
         {/* Logo */}
         <a
           href="#home"
-          aria-label="Luma home"
+          aria-label={t("home")}
           onClick={closeMenu}
-          className={`text-xl font-extrabold tracking-tight ${focusStyles}`}
+          className={`text-xl font-semibold tracking-tight text-(--text-primary) ${focusStyles}`}
         >
           luma.
         </a>
 
         {/* Desktop navigation */}
         <nav
-          aria-label="Main navigation"
+          aria-label={t("mainNavigation")}
           className="hidden items-center gap-8 md:flex"
         >
           {navigation.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`text-sm text-foreground/70 transition-colors hover:text-primary ${focusStyles}`}
-            >
-              {item.label}
+            <a key={item.key} href={item.href} className={navigationStyles}>
+              {t(item.key)}
             </a>
           ))}
         </nav>
 
         {/* Desktop actions */}
-        <div className="hidden items-center gap-5 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
+          <LanguageSwitcher />
+
           <a
             href="#contact"
-            className={`text-sm font-medium transition-colors hover:text-primary ${focusStyles}`}
+            className={`text-sm font-normal leading-6 tracking-normal text-(--text-secondary) ${focusStyles}`}
           >
-            Log in
+            {t("login")}
           </a>
 
           <a
             href="#courses"
-            className={`inline-flex min-h-10 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover ${focusStyles}`}
+            className={`inline-flex min-h-10 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-white ${focusStyles}`}
           >
-            Start learning
+            {t("startLearning")}
           </a>
         </div>
 
@@ -103,7 +107,7 @@ export default function Header() {
         <button
           ref={menuButtonRef}
           type="button"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={isMenuOpen ? t("closeMenu") : t("openMenu")}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -144,36 +148,40 @@ export default function Header() {
         <nav
           ref={mobileNavRef}
           id="mobile-navigation"
-          aria-label="Mobile navigation"
+          aria-label={t("mobileNavigation")}
           className="absolute inset-x-0 top-full border-b border-border bg-background px-6 py-6 shadow-lg md:hidden"
         >
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-2">
             {navigation.map((item) => (
               <a
-                key={item.label}
+                key={item.key}
                 href={item.href}
                 onClick={closeMenu}
-                className={`text-base font-medium transition-colors hover:text-primary ${focusStyles}`}
+                className={`text-base font-normal leading-6 tracking-normal text-(--text-secondary) ${focusStyles}`}
               >
-                {item.label}
+                {t(item.key)}
               </a>
             ))}
 
             <a
               href="#contact"
               onClick={closeMenu}
-              className={`text-base font-medium transition-colors hover:text-primary ${focusStyles}`}
+              className={`text-base font-normal leading-6 tracking-normal text-(--text-secondary) ${focusStyles}`}
             >
-              Log in
+              {t("login")}
             </a>
 
             <a
               href="#courses"
               onClick={closeMenu}
-              className={`inline-flex min-h-12 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover ${focusStyles}`}
+              className={`inline-flex min-h-12 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-white ${focusStyles}`}
             >
-              Start learning
+              {t("startLearning")}
             </a>
+
+            <div className="border-t border-border pt-5">
+              <LanguageSwitcher />
+            </div>
           </div>
         </nav>
       )}

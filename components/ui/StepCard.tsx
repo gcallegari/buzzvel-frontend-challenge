@@ -1,4 +1,4 @@
-
+import { useTranslations } from "next-intl";
 import type { Step, StepColor } from "@/data/steps";
 
 interface StepCardProps {
@@ -18,6 +18,11 @@ const innerStyles: Record<StepColor, string> = {
 };
 
 export default function StepCard({ step }: StepCardProps) {
+  const t = useTranslations("HowItWorks");
+
+  const title = t(`items.${step.translationKey}.title`);
+  const description = t(`items.${step.translationKey}.description`);
+
   return (
     <article className="flex flex-col items-start">
       {/* Decorative icon */}
@@ -33,15 +38,15 @@ export default function StepCard({ step }: StepCardProps) {
       </div>
 
       <span className="mb-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-foreground/50">
-        Step {step.number}
+        {t("step", { number: step.number })}
       </span>
 
       <h3 className="text-lg font-bold tracking-tight">
-        {step.title}
+        {title}
       </h3>
 
       <p className="mt-3 max-w-xs text-sm leading-relaxed text-foreground/65">
-        {step.description}
+        {description}
       </p>
     </article>
   );
