@@ -6,6 +6,7 @@ import FeaturedCourse from "@/components/sections/FeaturedCourse";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Testimonials from "@/components/sections/Testimonials";
 import People from "@/components/sections/People";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <HowItWorks />
         <Testimonials />
         <People />
+        <Contact />
       </main>
     </>
   );
