@@ -39,6 +39,7 @@
   --color-background-darkblue: var(--background-darkblue);
   --color-background-yellow: var(--background-yellow);
   --color-background-orange: var(--background-orange);
+  --color-background-primary-blue-light: var(--background-primary-blue-light);
 
   /* Typography */
   --color-foreground: var(--foreground);

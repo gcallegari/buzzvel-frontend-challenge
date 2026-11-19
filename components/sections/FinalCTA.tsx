@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import AvatarGroup from "@/components/ui/AvatarGroup";
@@ -43,7 +42,7 @@ export default function FinalCTA() {
     <section
       id="final-cta"
       aria-labelledby="final-cta-title"
-      className="relative isolate overflow-hidden bg-background-yellow px-5 py-[100px] md:px-10"
+      className="relative isolate overflow-hidden bg-background-yellow px-5 py-25 md:px-10"
     >
       {/* Decorative elements - desktop */}
       <div
@@ -51,7 +50,7 @@ export default function FinalCTA() {
         className="pointer-events-none absolute inset-0 hidden md:block"
       >
         {/* Top left outlined circle */}
-        <div className="absolute left-[1.5%] top-[4%] h-[108px] w-[108px] rounded-full border-2 border-background-orange" />
+        <div className="absolute left-[1.5%] top-[4%] h-27 w-27 rounded-full border-2 border-background-orange" />
 
         {/* Top outlined square */}
         <div className="absolute left-[25%] top-[10%] h-14 w-14 rotate-12 rounded-lg border border-background-orange" />
@@ -66,7 +65,7 @@ export default function FinalCTA() {
         <div className="absolute -left-6 top-[50%] h-16 w-12 rotate-12 rounded-lg bg-background-orange" />
 
         {/* Bottom left circle */}
-        <div className="absolute -bottom-[50px] left-[4%] h-[120px] w-[120px] rounded-full bg-background-orange" />
+        <div className="absolute -bottom-12.5 left-[4%] h-30 w-30 rounded-full bg-background-orange" />
 
         {/* Bottom right circle */}
         <div className="absolute bottom-[1%] right-[4%] h-8 w-8 rounded-full border-2 border-background-orange" />
@@ -85,14 +84,14 @@ export default function FinalCTA() {
       </div>
 
       {/* CTA content */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[720px] flex-col items-center px-8 text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-180 flex-col items-center px-8 text-center">
         {/* Learner avatars */}
         <AvatarGroup count={4} size={40} />
 
         {/* Heading */}
         <h2
           id="final-cta-title"
-          className="mt-8 font-heading text-[36px] font-extrabold leading-[44px] tracking-[-1.4px] text-text-primary md:mt-10 md:text-[56px] md:leading-[64px]"
+          className="mt-8 font-heading text-[36px] font-extrabold leading-11 tracking-[-1.4px] text-text-primary md:mt-10 md:text-[56px] md:leading-16"
         >
           {t("title")}
         </h2>
@@ -106,14 +105,14 @@ export default function FinalCTA() {
         <div className="mt-10 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
           <a
             href="#courses"
-            className="inline-flex min-h-[52px] w-full items-center justify-center rounded-md bg-primary px-7 font-sans text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-auto"
+            className="inline-flex min-h-13 w-full items-center justify-center rounded-md bg-primary px-7 font-sans text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-auto"
           >
             {t("exploreCourses")}
           </a>
 
           <a
             href="#contact"
-            className="inline-flex min-h-[52px] w-full items-center justify-center rounded-md border border-line-1 bg-background-white px-7 font-sans text-sm font-semibold text-text-primary transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-auto"
+            className="inline-flex min-h-13 w-full items-center justify-center rounded-md border border-line-1 bg-background-white px-7 font-sans text-sm font-semibold text-text-primary transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-auto"
           >
             {t("joinLuma")}
           </a>

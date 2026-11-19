@@ -38,7 +38,7 @@ export default function InfoBadge({ variant, className = "" }: InfoBadgeProps) {
       `}
     >
       {isCourses ? (
-        <span className="flex h-7 shrink-0 items-center justify-center rounded-md bg-[#E9EDFF] px-2 text-xs font-bold text-primary md:h-8 md:rounded-lg md:text-sm">
+        <span className="flex h-7 shrink-0 items-center justify-center rounded-md bg-background-white px-2 text-xs font-bold text-primary md:h-8 md:rounded-lg md:text-sm">
           {courseCount}
         </span>
       ) : (
@@ -53,7 +53,7 @@ export default function InfoBadge({ variant, className = "" }: InfoBadgeProps) {
       <span
         className={
           isCourses
-            ? "min-w-0 font-sans text-[11px] font-medium leading-4 text-(--text-primary) md:whitespace-nowrap md:text-xs"
+            ? "min-w-0 font-sans text-[11px] font-medium leading-4 text-text-primary md:whitespace-nowrap md:text-xs"
             : "min-w-0 text-[10px] font-medium leading-4 text-foreground md:whitespace-nowrap md:text-xs"
         }
       >

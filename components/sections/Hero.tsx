@@ -11,25 +11,25 @@ export default function Hero() {
         {/* Hero content */}
         <div className="order-2 min-w-0 md:order-1">
           {/* Eyebrow */}
-          <p className="mb-4 font-sans text-xs font-semibold leading-4 tracking-[1.44px] uppercase text-(--primary-blue)">
+          <p className="mb-4 font-sans text-xs font-semibold leading-4 tracking-[1.44px] uppercase text-primary">
             {t("eyebrow")}
           </p>
 
           {/* Heading */}
           <h1
             id="hero-title"
-            className="max-w-xl font-heading text-[32px] font-extrabold leading-[1.09375] tracking-[-1.6px] text-(--text-primary) sm:text-[40px] lg:text-[64px]"
+            className="max-w-xl font-heading text-[32px] font-extrabold leading-[1.09375] tracking-[-1.6px] text-text-primary sm:text-[40px] lg:text-[64px]"
           >
             {t("title")}
           </h1>
 
           {/* Description */}
-          <p className="mt-6 max-w-md font-sans text-base font-normal leading-7 tracking-normal text-(--text-secondary) lg:text-lg">
+          <p className="mt-6 max-w-md font-sans text-base font-normal leading-7 tracking-normal text-text-secondary lg:text-lg">
             {t("description")}
           </p>
 
           {/* Call to action */}
-         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#courses"
               className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-primary px-6 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-auto"

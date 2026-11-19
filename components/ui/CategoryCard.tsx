@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { Category } from "@/data/categories";
@@ -7,16 +6,14 @@ interface CategoryCardProps {
   category: Category;
 }
 
-export default function CategoryCard({
-  category,
-}: CategoryCardProps) {
+export default function CategoryCard({ category }: CategoryCardProps) {
   const t = useTranslations("Categories");
 
   const title = t(`items.${category.translationKey}.title`);
   const description = t(`items.${category.translationKey}.description`);
 
   return (
-    <article className="flex h-full min-h-65 flex-col justify-between rounded-2xl border border-[line-1] bg-white p-7 lg:h-[264.5px]">
+    <article className="flex h-full min-h-65 flex-col justify-between rounded-2xl border border-border bg-white p-7 lg:h-[264.5px]">
       <div>
         {/* Number */}
         <span className="relative top-0.5 inline-flex h-6 w-8 shrink-0 items-center justify-center rounded-md bg-primary-light px-2 py-1 font-sans text-xs font-semibold leading-4 tracking-[1.44px] uppercase text-primary">

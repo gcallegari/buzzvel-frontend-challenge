@@ -1,4 +1,3 @@
-
 import { useTranslations } from "next-intl";
 import FooterLinks from "@/components/ui/FooterLinks";
 import { footerGroups } from "@/data/footer";
@@ -7,8 +6,8 @@ export default function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="bg-[#191D30] text-white">
-      <div className="mx-auto w-full max-w-[1280px] px-5 pt-14 pb-8 md:px-10 md:pt-20 md:pb-10">
+    <footer className="bg-background-darkblue text-white">
+      <div className="mx-auto w-full max-w-7xl px-5 pt-14 pb-8 md:px-10 md:pt-20 md:pb-10">
         {/* Footer main content */}
         <div className="grid grid-cols-2 gap-10 min-[1216px]:grid-cols-[416px_repeat(3,208px)] min-[1216px]:gap-8">
           {/* Brand */}
@@ -21,9 +20,9 @@ export default function Footer() {
               luma.
             </a>
 
-         <p className="mt-2 w-full whitespace-nowrap text-sm leading-6 text-white/55 md:max-w-[220px] md:whitespace-normal">
-  {t("description")}
-</p>
+            <p className="mt-2 w-full whitespace-nowrap text-sm leading-6 text-white/55 md:max-w-55 md:whitespace-normal">
+              {t("description")}
+            </p>
           </div>
 
           {/* Navigation groups */}
@@ -33,7 +32,7 @@ export default function Footer() {
         </div>
 
         {/* Footer bottom */}
-<div className="mt-12 border-t border-white/25 pt-6 md:mt-16">
+        <div className="mt-12 border-t border-white/25 pt-6 md:mt-16">
           <p className="text-center text-xs text-white/80 min-[1216px]:text-left">
             {t("copyright", { year: 2026 })}
           </p>

@@ -11,13 +11,13 @@ export default function HeroVisual() {
         {/* Orange decorative shape */}
         <div
           aria-hidden="true"
-          className="absolute left-[83.33%] top-[4.58%] h-[89.31%] w-[16.48%] rounded-2xl bg-[#FFC99F]"
+          className="absolute left-[83.33%] top-[4.58%] h-[89.31%] w-[16.48%] rounded-2xl bg-background-orange"
         />
 
         {/* Lavender decorative circle */}
         <div
           aria-hidden="true"
-          className="absolute left-[-3%] top-[78%] aspect-square w-[17%] rounded-full bg-[#E4E5FF] md:left-[-8.3%] md:top-[76.91%] md:w-[19.63%]"
+          className="absolute left-[-3%] top-[75%] aspect-square w-[17%] rounded-full bg-[#E4E5FF] md:left-[-8.3%] md:top-[73%] md:w-[19.63%]"
         />
 
         {/* Main photograph */}

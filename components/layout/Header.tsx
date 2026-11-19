@@ -67,7 +67,7 @@ export default function Header() {
           href="#home"
           aria-label={t("home")}
           onClick={closeMenu}
-          className={`text-xl font-semibold tracking-tight text-(--text-primary) ${focusStyles}`}
+          className={`text-xl font-semibold tracking-tight text-text-primary ${focusStyles}`}
         >
           luma.
         </a>
@@ -90,7 +90,7 @@ export default function Header() {
 
           <a
             href="#contact"
-            className={`text-sm font-normal leading-6 tracking-normal text-(--text-secondary) ${focusStyles}`}
+            className={`text-sm font-normal leading-6 tracking-normal text-text-secondary ${focusStyles}`}
           >
             {t("login")}
           </a>
@@ -157,7 +157,7 @@ export default function Header() {
                 key={item.key}
                 href={item.href}
                 onClick={closeMenu}
-                className={`text-base font-normal leading-6 tracking-normal text-(--text-secondary) ${focusStyles}`}
+                className={`text-base font-normal leading-6 tracking-normal text-text-secondary ${focusStyles}`}
               >
                 {t(item.key)}
               </a>
@@ -166,7 +166,7 @@ export default function Header() {
             <a
               href="#contact"
               onClick={closeMenu}
-              className={`text-base font-normal leading-6 tracking-normal text-(--text-secondary) ${focusStyles}`}
+              className={`text-base font-normal leading-6 tracking-normal text-text-secondary ${focusStyles}`}
             >
               {t("login")}
             </a>

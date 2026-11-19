@@ -1,4 +1,3 @@
-
 import { useTranslations } from "next-intl";
 import type { Step, StepColor } from "@/data/steps";
 

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -13,10 +12,7 @@ const createContactSchema = (
   z.object({
     name: z.string().trim().min(2, t("validation.name")),
     email: z.email(t("validation.email")),
-    question: z
-      .string()
-      .trim()
-      .min(10, t("validation.question")),
+    question: z.string().trim().min(10, t("validation.question")),
   });
 
 type ContactFormValues = {
@@ -55,7 +51,7 @@ export default function ContactForm() {
     "font-sans text-sm font-bold leading-6 tracking-normal text-text-primary";
 
   return (
-    <div className="flex w-full flex-col gap-6 rounded-2xl border border-border bg-background-white p-5 shadow-[0_12px_32px_0_#171B2C0A] md:min-h-[596px] md:p-10">
+    <div className="flex w-full flex-col gap-6 rounded-2xl border border-border bg-background-white p-5 shadow-[0_12px_32px_0_#171B2C0A] md:min-h-149 md:p-10">
       {/* Form heading */}
       <div className="flex flex-col gap-2">
         <h3 className="font-heading text-xl font-bold leading-8 tracking-normal text-text-primary">
@@ -86,9 +82,7 @@ export default function ContactForm() {
             autoComplete="name"
             placeholder={t("namePlaceholder")}
             aria-invalid={!!errors.name}
-            aria-describedby={
-              errors.name ? "contact-name-error" : undefined
-            }
+            aria-describedby={errors.name ? "contact-name-error" : undefined}
             className={inputStyles}
             {...register("name")}
           />
@@ -116,9 +110,7 @@ export default function ContactForm() {
             autoComplete="email"
             placeholder={t("emailPlaceholder")}
             aria-invalid={!!errors.email}
-            aria-describedby={
-              errors.email ? "contact-email-error" : undefined
-            }
+            aria-describedby={errors.email ? "contact-email-error" : undefined}
             className={inputStyles}
             {...register("email")}
           />
@@ -146,11 +138,9 @@ export default function ContactForm() {
             placeholder={t("questionPlaceholder")}
             aria-invalid={!!errors.question}
             aria-describedby={
-              errors.question
-                ? "contact-question-error"
-                : undefined
+              errors.question ? "contact-question-error" : undefined
             }
-            className={`${inputStyles} !h-[120px] !px-4 !py-[14px] resize-none`}
+            className={`${inputStyles} h-30! px-4! py-3.5! resize-none`}
             {...register("question")}
           />
 

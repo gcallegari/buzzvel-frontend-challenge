@@ -1,4 +1,3 @@
-
 import { useTranslations } from "next-intl";
 import { Clock3, MessageCircleMore } from "lucide-react";
 import type { ReactNode } from "react";
@@ -9,15 +8,11 @@ interface ContactInfoItemProps {
   children: ReactNode;
 }
 
-function ContactInfoItem({
-  icon,
-  title,
-  children,
-}: ContactInfoItemProps) {
+function ContactInfoItem({ icon, title, children }: ContactInfoItemProps) {
   return (
-    <div className="flex min-h-[92px] w-full items-center gap-4 rounded-xl bg-background-light-yellow p-5">
+    <div className="flex min-h-23 w-full items-center gap-4 rounded-xl bg-background-light-yellow p-5">
       {/* Icon */}
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-light p-[10px] text-primary">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-light p-2.5 text-primary">
         {icon}
       </div>
 
@@ -39,7 +34,7 @@ export default function ContactInfo() {
   const t = useTranslations("Contact.info");
 
   return (
-    <div className="mt-10 flex w-full max-w-[480px] flex-col gap-4">
+    <div className="mt-10 flex w-full max-w-120 flex-col gap-4">
       {/* Email */}
       <ContactInfoItem
         icon={<MessageCircleMore size={20} strokeWidth={1.8} />}

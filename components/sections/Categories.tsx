@@ -1,4 +1,3 @@
-
 import { useTranslations } from "next-intl";
 import CategoryCard from "@/components/ui/CategoryCard";
 import { categories } from "@/data/categories";
