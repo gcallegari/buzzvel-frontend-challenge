@@ -49,7 +49,7 @@
       }
     }
   },
-   "FeaturedCourse": {
+  "FeaturedCourse": {
     "badge": "Curso em destaque",
     "category": "O mais popular deste mês",
     "title": "Criar produtos que as pessoas compreendem.",
@@ -57,15 +57,15 @@
     "instructor": "com <strong>{name}</strong> · {role}",
     "instructorRole": "Designer Sénior de Produto",
     "tags": {
-      "productDesign": "Design de Produto",
-      "beginner": "Iniciação",
-      "liveFeedback": "Feedback em direto"
+      "lessons": "8 aulas",
+      "duration": "2h 40min",
+      "level": "Intermédio"
     },
     "viewCourse": "Ver curso",
     "browseCourses": "Explorar todos os cursos",
     "imageAlt": "Designer de produto a trabalhar com esboços, materiais e protótipos"
   },
-   "HowItWorks": {
+  "HowItWorks": {
     "eyebrow": "Como funciona a Luma",
     "title": "Menos pesquisas. Mais aprendizagem.",
     "step": "Passo {number}",
@@ -94,7 +94,7 @@
       "completion": "concluem o primeiro curso"
     }
   },
-   "People": {
+  "People": {
     "eyebrow": "As pessoas",
     "title": "Conheça alunos e professores de todo o mundo",
     "description": "Morbi sit egestas dignissim pharetra, sed amet. Tempus justo senectus risus ac vel, velit, nunc. Eget commodo eget in aliquam facilisi facilisi nec magna hendrerit. Placerat ipsum sit tellus urna, faucibus aenean lorem faucibus integer.",
@@ -126,10 +126,12 @@
         "name": "Introduza o seu nome completo.",
         "email": "Introduza um endereço de e-mail válido.",
         "question": "Introduza pelo menos 10 caracteres."
-      }
+      },
+      "demoSuccess": "Formulário validado com sucesso! Esta é uma demonstração; nenhuma mensagem foi enviada.",
+      "closeNotification": "Fechar notificação"
     }
   },
-    "FinalCTA": {
+  "FinalCTA": {
     "title": "O que vai aprender a seguir?",
     "description": "Comece com um curso. Continue a evoluir.",
     "exploreCourses": "Explorar todos os cursos",

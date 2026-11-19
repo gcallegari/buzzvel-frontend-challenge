@@ -1,41 +1,70 @@
-
 @import "tailwindcss";
 
 :root {
-  --background: #faf9f6;
-  --foreground: #191d30;
+  /* Backgrounds */
+  --background: #f9f8f3;
+  --background-light-yellow: #f9f8f3;
+  --background-white: #ffffff;
+  --background-darkblue: #171b2c;
+  --background-yellow: #fff1c2;
+  --background-orange: #ffcb9f;
 
-  --color-primary: #3457f5;
-  --color-primary-hover: #2445df;
-  --color-accent: #ffdf59;
-
-  --primary-blue: #3157F6;
-
-  --color-surface: #ffffff;
-  --color-muted: #f5f4ef;
-  --color-border: #e6e8ef;
-
-  --text-primary: #171B2C;
+  /* Typography */
+  --foreground: #171b2c;
+  --text-primary: #171b2c;
   --text-secondary: #656770;
+  --text-tertiary: #6d7384;
 
-  --font-sans: var(--font-inter);
+  /* Brand colors */
+  --primary-blue: #3157f6;
+  --primary-blue-light: #e2e8ff;
+  --primary-blue-hover: #2445df;
+  --accent-yellow: #ffdf59;
+  --secondary-yellow: #ffee7e;
+  --primary-orange: #ff704d;
+  --accent-yellow-step: #e9d659;
+
+  /* Surfaces */
+  --surface: #ffffff;
+  --muted: #f5f4ef;
+  --border-color: #e6e8ef;
+  --line-1: #dbdfeb;
 }
 
-
 @theme inline {
-  --color-background: #faf9f6;
-  --color-foreground: #191d30;
-  --color-primary: #3457f5;
-  --color-primary-hover: #2445df;
-  --color-accent: #ffdf59;
-  --color-surface: #ffffff;
-  --color-muted: #f5f4ef;
-  --color-border: #e6e8ef;
+  /* Backgrounds */
+  --color-background: var(--background);
+  --color-background-light-yellow: var(--background-light-yellow);
+  --color-background-white: var(--background-white);
+  --color-background-darkblue: var(--background-darkblue);
+  --color-background-yellow: var(--background-yellow);
+  --color-background-orange: var(--background-orange);
 
+  /* Typography */
+  --color-foreground: var(--foreground);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+
+  /* Brand colors */
+  --color-primary: var(--primary-blue);
+  --color-primary-light: var(--primary-blue-light);
+  --color-primary-hover: var(--primary-blue-hover);
+  --color-accent: var(--accent-yellow);
+  --color-secondary-yellow: var(--secondary-yellow);
+  --color-primary-orange: var(--primary-orange);
+  --color-accent-yellow-step: var(--accent-yellow-step);
+
+  /* Surfaces */
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-border: var(--border-color);
+  --color-line-1: var(--line-1);
+
+  /* Fonts */
   --font-sans: var(--font-inter);
   --font-heading: var(--font-plus-jakarta);
 }
-
 
 * {
   box-sizing: border-box;

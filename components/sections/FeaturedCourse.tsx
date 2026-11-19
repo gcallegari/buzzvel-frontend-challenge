@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { ArrowRight } from "lucide-react";
 
 const course = {
   instructor: "Maya Chen",
-  tags: ["productDesign", "beginner", "liveFeedback"],
+  tags: ["lessons", "duration", "level"],
 } as const;
 
 export default function FeaturedCourse() {
@@ -15,10 +16,10 @@ export default function FeaturedCourse() {
       aria-labelledby="featured-course-title"
       className="bg-primary text-white"
     >
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-7 px-6 py-14 md:grid-cols-2 md:gap-10 md:px-10 md:py-20 lg:gap-12 lg:px-[80px] lg:py-[100px]">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-7 px-5 py-14 md:grid-cols-2 md:gap-10 md:px-10 md:py-20 lg:gap-12 lg:px-20 lg:py-25">
         {/* Course image */}
         <div className="relative min-w-0">
-          <span className="absolute -left-2 -top-2 z-10 rounded-sm bg-accent px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-foreground">
+          <span className="absolute -top-2 -left-2 z-10 rounded-sm bg-accent px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-foreground">
             {t("badge")}
           </span>
 
@@ -27,44 +28,48 @@ export default function FeaturedCourse() {
             alt={t("imageAlt")}
             width={538}
             height={402}
-            sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1023px) 50vw, 536px"
+            sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) 50vw, 536px"
             className="h-auto w-full rounded-xl object-cover"
           />
         </div>
 
         {/* Course content */}
         <div className="min-w-0">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
+          {/* Eyebrow */}
+          <p className="mb-3 font-sans text-xs font-semibold leading-4 tracking-[1.44px] uppercase text-white/80">
             {t("category")}
           </p>
 
+          {/* Heading */}
           <h2
             id="featured-course-title"
-            className="max-w-xl text-[26px] font-bold leading-[1.1] tracking-tight md:text-[34px] lg:text-[38px]"
+            className="max-w-xl font-heading text-[32px] font-extrabold leading-[1.2] tracking-[-1.2px] text-white lg:text-[48px] lg:leading-14"
           >
             {t("title")}
           </h2>
 
-          <p className="mt-4 max-w-lg text-sm leading-relaxed text-white/85 md:text-base">
+          {/* Description */}
+          <p className="mt-4 max-w-lg font-sans text-base font-normal leading-7 tracking-normal text-white">
             {t("description")}
           </p>
 
-          <p className="mt-5 text-sm text-white/90">
+          {/* Instructor */}
+          <p className="mt-5 font-sans text-base font-normal leading-7 tracking-normal text-white">
             {t.rich("instructor", {
               name: course.instructor,
               role: t("instructorRole"),
               strong: (chunks) => (
-                <strong className="font-semibold">{chunks}</strong>
+                <strong className="font-normal">{chunks}</strong>
               ),
             })}
           </p>
 
           {/* Course tags */}
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-3">
             {course.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded border border-white/50 px-3 py-2 text-xs font-medium text-white"
+                className="inline-flex items-center justify-center rounded-lg border border-[line-1] px-3.5 py-1.5 font-sans text-xs font-medium leading-5 text-white"
               >
                 {t(`tags.${tag}`)}
               </span>
@@ -72,20 +77,20 @@ export default function FeaturedCourse() {
           </div>
 
           {/* Actions */}
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-7 flex flex-col gap-2 sm:flex-row sm:items-center">
             <a
               href="#contact"
-              className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-accent px-6 text-sm font-bold text-foreground transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
+              className="inline-flex h-13 min-w-35.5 items-center justify-center rounded-lg bg-secondary-yellow px-7 py-3.5 font-sans text-sm font-bold text-text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               {t("viewCourse")}
             </a>
 
             <a
               href="#courses"
-              className="inline-flex min-h-12 items-center justify-center gap-2 text-sm font-semibold text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex min-h-13 items-center justify-center gap-2 rounded-lg px-4 py-3.5 font-sans text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               {t("browseCourses")}
-              <span aria-hidden="true">→</span>
+              <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
             </a>
           </div>
         </div>

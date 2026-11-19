@@ -1,3 +1,4 @@
+
 import { useTranslations } from "next-intl";
 import { Clock3, MessageCircleMore } from "lucide-react";
 import type { ReactNode } from "react";
@@ -14,17 +15,19 @@ function ContactInfoItem({
   children,
 }: ContactInfoItemProps) {
   return (
-    <div className="flex min-h-[72px] items-center gap-3 rounded-xl bg-background p-4">
-      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[#E4E9FF] text-primary">
+    <div className="flex min-h-[92px] w-full items-center gap-4 rounded-xl bg-background-light-yellow p-5">
+      {/* Icon */}
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-light p-[10px] text-primary">
         {icon}
       </div>
 
-      <div>
-        <p className="text-xs font-medium text-foreground">
+      {/* Content */}
+      <div className="min-w-0">
+        <p className="font-sans text-sm font-normal leading-6 tracking-normal text-text-primary">
           {title}
         </p>
 
-        <div className="mt-1 text-xs leading-relaxed text-foreground/60">
+        <div className="font-sans text-sm font-normal leading-6 tracking-normal text-text-tertiary">
           {children}
         </div>
       </div>
@@ -36,21 +39,23 @@ export default function ContactInfo() {
   const t = useTranslations("Contact.info");
 
   return (
-    <div className="mt-8 flex flex-col gap-3">
+    <div className="mt-10 flex w-full max-w-[480px] flex-col gap-4">
+      {/* Email */}
       <ContactInfoItem
-        icon={<MessageCircleMore size={18} strokeWidth={1.8} />}
+        icon={<MessageCircleMore size={20} strokeWidth={1.8} />}
         title={t("email")}
       >
         <a
           href="mailto:contact@luma.com"
-          className="text-primary hover:underline"
+          className="break-all text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           contact@luma.com
         </a>
       </ContactInfoItem>
 
+      {/* Response time */}
       <ContactInfoItem
-        icon={<Clock3 size={18} strokeWidth={1.8} />}
+        icon={<Clock3 size={20} strokeWidth={1.8} />}
         title={t("responseTime")}
       >
         {t("responseDescription")}

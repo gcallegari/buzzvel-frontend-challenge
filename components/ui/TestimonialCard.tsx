@@ -5,43 +5,38 @@ export default function TestimonialCard() {
   const t = useTranslations("Testimonials");
 
   return (
-    <figure className="m-0">
+    <figure className="m-0 min-w-0">
       {/* Decorative quotation mark */}
-      <svg
+      <Image
+        src="/icons/quote.svg"
+        alt=""
+        width={24}
+        height={22}
+        className="mb-4"
         aria-hidden="true"
-        width="28"
-        height="28"
-        viewBox="0 0 28 28"
-        fill="none"
-        className="mb-4 text-primary"
-      >
-        <path
-          d="M5 5H12L10 17H6L5 5ZM16 5H23L21 17H17L16 5Z"
-          fill="currentColor"
-        />
-      </svg>
+      />
 
       {/* Testimonial */}
-      <blockquote className="max-w-[500px] text-[17px] font-semibold leading-[1.5] tracking-tight text-foreground md:text-[24px] md:leading-[1.4]">
+      <blockquote className="max-w-150 font-heading text-[24px] font-semibold leading-[1.4] tracking-[-0.75px] text-text-primary lg:text-[30px] lg:leading-11">
         {t("quote")}
       </blockquote>
 
       {/* Author */}
-      <figcaption className="mt-7 flex items-center gap-3">
+      <figcaption className="mt-7 flex items-center gap-4">
         <Image
           src="/images/alex-morgan.png"
-          alt="Alex Morgan"
-          width={40}
-          height={40}
-          className="h-10 w-10 rounded-full object-cover"
+          alt=""
+          width={48}
+          height={48}
+          className="h-12 w-12 shrink-0 rounded-full object-cover"
         />
 
         <div>
-          <p className="text-sm font-bold text-foreground">
+          <p className="font-sans text-base font-bold leading-7 tracking-normal text-text-primary">
             Alex Morgan
           </p>
 
-          <p className="mt-1 text-xs text-foreground/60">
+          <p className="font-sans text-sm font-normal leading-6 tracking-normal text-text-secondary">
             {t("authorRole")}
           </p>
         </div>

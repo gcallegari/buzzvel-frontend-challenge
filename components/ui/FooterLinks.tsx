@@ -1,3 +1,4 @@
+
 import { useTranslations } from "next-intl";
 import type { FooterGroup } from "@/data/footer";
 
@@ -12,11 +13,11 @@ export default function FooterLinks({ group }: FooterLinksProps) {
 
   return (
     <nav aria-label={t("navigationLabel", { group: title })}>
-      <h3 className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
+      <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
         {title}
       </h3>
 
-      <ul className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-3">
         {group.links.map((link) => (
           <li key={link.id}>
             <a

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -10,13 +11,8 @@ const createContactSchema = (
   t: ReturnType<typeof useTranslations<"Contact.form">>,
 ) =>
   z.object({
-    name: z
-      .string()
-      .trim()
-      .min(2, t("validation.name")),
-
+    name: z.string().trim().min(2, t("validation.name")),
     email: z.email(t("validation.email")),
-
     question: z
       .string()
       .trim()
@@ -36,10 +32,10 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(createContactSchema(t)),
-    mode: "onBlur",
+    mode: "onChange",
     defaultValues: {
       name: "",
       email: "",
@@ -47,37 +43,40 @@ export default function ContactForm() {
     },
   });
 
-  const onSubmit = (_data: ContactFormValues) => {
+  const onSubmit = () => {
     // TODO: Integrate with a real API endpoint.
-    // Do not transmit or log personal data until an endpoint exists.
     setIsUnavailable(true);
   };
 
   const inputStyles =
-    "mt-2 w-full rounded-md border border-border bg-background px-3 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-foreground/45 focus:border-primary focus:ring-2 focus:ring-primary/15";
+    "mt-2 h-12 w-full rounded-lg border border-border bg-background-light-yellow px-4 py-3 font-sans text-sm font-normal leading-6 tracking-normal text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-primary focus:ring-2 focus:ring-primary/15";
+
+  const labelStyles =
+    "font-sans text-sm font-bold leading-6 tracking-normal text-text-primary";
 
   return (
-    <div className="rounded-xl border border-border bg-white p-5 shadow-sm md:p-8">
-      <h3 className="text-lg font-bold text-foreground">
-        {t("title")}
-      </h3>
+    <div className="flex w-full flex-col gap-6 rounded-2xl border border-border bg-background-white p-5 shadow-[0_12px_32px_0_#171B2C0A] md:min-h-[596px] md:p-10">
+      {/* Form heading */}
+      <div className="flex flex-col gap-2">
+        <h3 className="font-heading text-xl font-bold leading-8 tracking-normal text-text-primary">
+          {t("title")}
+        </h3>
 
-      <p className="mt-2 text-xs text-foreground/60">
-        {t("description")}
-      </p>
+        <p className="font-sans text-sm font-normal leading-6 tracking-normal text-text-secondary">
+          {t("description")}
+        </p>
+      </div>
 
+      {/* Form fields */}
       <form
         onSubmit={handleSubmit(onSubmit)}
         onChange={() => setIsUnavailable(false)}
         noValidate
-        className="mt-6 flex flex-col gap-5"
+        className="flex flex-col gap-5"
       >
         {/* Full name */}
         <div>
-          <label
-            htmlFor="contact-name"
-            className="text-xs font-semibold"
-          >
+          <label htmlFor="contact-name" className={labelStyles}>
             {t("name")}
           </label>
 
@@ -107,10 +106,7 @@ export default function ContactForm() {
 
         {/* Email */}
         <div>
-          <label
-            htmlFor="contact-email"
-            className="text-xs font-semibold"
-          >
+          <label htmlFor="contact-email" className={labelStyles}>
             {t("email")}
           </label>
 
@@ -140,10 +136,7 @@ export default function ContactForm() {
 
         {/* Question */}
         <div>
-          <label
-            htmlFor="contact-question"
-            className="text-xs font-semibold"
-          >
+          <label htmlFor="contact-question" className={labelStyles}>
             {t("question")}
           </label>
 
@@ -157,7 +150,7 @@ export default function ContactForm() {
                 ? "contact-question-error"
                 : undefined
             }
-            className={`${inputStyles} resize-none`}
+            className={`${inputStyles} !h-[120px] !px-4 !py-[14px] resize-none`}
             {...register("question")}
           />
 
@@ -175,14 +168,19 @@ export default function ContactForm() {
         {/* Submit */}
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="flex min-h-11 w-full items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-60"
+          disabled={!isValid || isSubmitting}
+          className="flex min-h-11 w-full items-center justify-center rounded-md bg-primary px-5 font-sans text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-default disabled:opacity-60 disabled:hover:bg-primary"
         >
           {isSubmitting ? t("submitting") : t("submit")}
         </button>
 
+        {/* Submission unavailable feedback */}
         {isUnavailable && (
-          <p role="status" className="text-sm text-foreground/70">
+          <p
+            role="status"
+            aria-live="polite"
+            className="text-sm text-text-secondary"
+          >
             {t("unavailable")}
           </p>
         )}

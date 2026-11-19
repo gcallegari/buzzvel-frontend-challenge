@@ -57,15 +57,15 @@
     "instructor": "with <strong>{name}</strong> · {role}",
     "instructorRole": "Senior Product Designer",
     "tags": {
-      "productDesign": "Product Design",
-      "beginner": "Beginner",
-      "liveFeedback": "Live feedback"
+      "lessons": "8 lessons",
+      "duration": "2h 40min",
+      "level": "Intermediate"
     },
     "viewCourse": "View course",
     "browseCourses": "Browse all courses",
     "imageAlt": "Product designer working with sketches, materials and prototypes"
   },
-    "HowItWorks": {
+  "HowItWorks": {
     "eyebrow": "How Luma works",
     "title": "Less browsing. More learning.",
     "step": "Step {number}",
@@ -126,10 +126,12 @@
         "name": "Please enter your full name.",
         "email": "Please enter a valid email address.",
         "question": "Please enter at least 10 characters."
-      }
+      },
+      "demoSuccess": "Form validated successfully! This is a demo; no message was sent.",
+      "closeNotification": "Close notification"
     }
   },
-   "FinalCTA": {
+  "FinalCTA": {
     "title": "What will you learn next?",
     "description": "Start with one course. Build from there.",
     "exploreCourses": "Explore all courses",

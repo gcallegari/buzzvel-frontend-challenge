@@ -1,3 +1,4 @@
+
 import { useTranslations } from "next-intl";
 import type { Step, StepColor } from "@/data/steps";
 
@@ -6,15 +7,21 @@ interface StepCardProps {
 }
 
 const iconStyles: Record<StepColor, string> = {
-  blue: "rounded-full bg-[#E4E5FF]",
-  orange: "rotate-[12deg] rounded-[7px] bg-[#FFC99F]",
-  yellow: "rounded-[10px] bg-[#FFF0B8]",
+  blue: "rounded-full bg-primary-light",
+  orange: "rotate-12 rounded-lg bg-background-orange",
+  yellow: "rounded-xl bg-background-yellow",
 };
 
 const innerStyles: Record<StepColor, string> = {
-  blue: "rounded-[5px] bg-primary",
-  orange: "rounded-full bg-[#FF7557]",
-  yellow: "rounded-full bg-[#E8D34B]",
+  blue: "h-6 w-6 rounded-md bg-primary",
+  orange: "h-7 w-7 rounded-full bg-primary-orange",
+  yellow: "h-5 w-5 rounded-full bg-accent-yellow-step",
+};
+
+const innerPositions: Record<StepColor, string> = {
+  blue: "left-2 top-2",
+  orange: "left-6 top-6",
+  yellow: "left-2 top-7",
 };
 
 export default function StepCard({ step }: StepCardProps) {
@@ -26,26 +33,29 @@ export default function StepCard({ step }: StepCardProps) {
   return (
     <article className="flex flex-col items-start">
       {/* Decorative icon */}
-      <div className="relative z-10 mb-5 flex h-12 w-12 items-center justify-center">
+      <div className="relative z-10 h-14 w-14 shrink-0">
         <div
           aria-hidden="true"
-          className={`flex h-11 w-11 items-center justify-center ${iconStyles[step.color]}`}
+          className={`relative h-14 w-14 ${iconStyles[step.color]}`}
         >
           <div
-            className={`h-[18px] w-[18px] ${innerStyles[step.color]}`}
+            className={`absolute ${innerStyles[step.color]} ${innerPositions[step.color]}`}
           />
         </div>
       </div>
 
-      <span className="mb-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-foreground/50">
+      {/* Step number */}
+      <span className="mt-6 font-sans text-xs font-semibold leading-4 tracking-[1.44px] uppercase text-text-tertiary">
         {t("step", { number: step.number })}
       </span>
 
-      <h3 className="text-lg font-bold tracking-tight">
+      {/* Step title */}
+      <h3 className="mt-2 font-heading text-xl font-bold leading-8 tracking-normal text-text-primary">
         {title}
       </h3>
 
-      <p className="mt-3 max-w-xs text-sm leading-relaxed text-foreground/65">
+      {/* Step description */}
+      <p className="mt-3 max-w-xs font-sans text-base font-normal leading-7 tracking-normal text-text-secondary">
         {description}
       </p>
     </article>
